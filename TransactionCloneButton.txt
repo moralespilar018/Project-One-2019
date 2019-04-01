@@ -1,0 +1,16 @@
+<apex:page standardController="Transaction__c" extensions="TransactionCloneButtonExtension">
+	<apex:form >
+        <apex:pageBlock >
+			<apex:sectionHeader title="{!Transaction__c.Name}" subtitle="In order to clone, new date and amount is requiered!" />
+            <apex:pageBlockSection columns="1">
+            	<p>Purchase Name: {!Transaction__c.Name} </p>               
+            	<p> <apex:inputField value="{!Transaction__c.TransactionDate__c}"/></p>
+                <p> <apex:inputField value="{!Transaction__c.Amount__c}"/></p>   
+            </apex:pageBlockSection>
+			<apex:pageBlockSection >
+            <apex:commandButton value="Clone" action="{!cloneTransaction}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockSection>
+		</apex:pageBlock>
+    </apex:form>
+</apex:page>
